@@ -48,29 +48,47 @@ console.log(arrayLength);
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  return cb(arr.length -1);
+   return cb(arr[items.length -1]);
 }
+  
+   const showLast = last(items, (lastItem) => {
+    return lastItem;
+});
 
-const arrayLast = last(items, item => `${item} is the last item`);
-console.log(arrayLast);
+console.log(showLast);
+
+/*(lastItem function becomes cb(parameter) */
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  return cb(x+y);
+  return cb(x, y);
 }
-const moreNums = sumNums(items, item => `Adds two ${item}`);
-console.log(moreNums);
+
+function addTwoNums(num1, num2) {
+  return num1 + num2;
+}
+ 
+console.log(sumNums(2,3, addTwoNums));
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
- return cb(x*y);
+ return cb(x,y);
 }
+  function multiplyTwoNums(num1, num2) {
+    return num1 * num2;
+  }
 
-console.log(multiplyNums);
+console.log(multiplyNums(2, 3, mutliplyTwoNums));
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  for(let i =0; i < items.length; i++) {
+
+    if(list[i].includes(item))
+      return cb === true;
+       
+  }
 }
 
 /* STRETCH PROBLEM */
