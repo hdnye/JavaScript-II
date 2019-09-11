@@ -90,13 +90,12 @@ function contains(item, list, cb) {
        return cb(false);
      }
   };
-
-    
-    
+      // contains('item', items, function(contain) {
+      //   console.log(contain);
+     
+      // });  Ask how to make a static console so any value can be passed w/o needing a new function//
+ 
   
-
-  
-
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
