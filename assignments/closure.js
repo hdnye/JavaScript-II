@@ -4,6 +4,26 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+const fam = 'family'
+function parent(bigMama){
+      console.log(`${bigMama} loves her ${fam}`);
+
+    function child(firstChild){
+      console.log(`${firstChild} loves his ${fam}`);
+
+        function grandChild(lastChild) { 
+          console.log(`${lastChild} loves his ${fam}`);
+        
+          }//this closes the grandchild
+        grandChild('Morty');
+    }//this closes the child
+    child('Wint')
+}//this closes the parent
+parent('Ricky');
+
+//closures are code that have been identified elsewhere that we can use later// 
+
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
